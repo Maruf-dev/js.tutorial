@@ -5,7 +5,15 @@
 - variable
 - str => '...' or "..."
 <!-- ahror web -->
+- numbers
+in js all numbers are number. there no differens beetween 1 or 3.5. they all are same.
+ math operators +,-,*,/, **, %
+-explain updating data with a method of likes. (like there was 10 likes and smbd liked and its now 11 likes)
+NaN => 5 / 'salom'
+// math in js
+Math.round(2.8) => 3 // yaxlitlash
 
+//
 - most used str methods
 ''.toUpperCase() / .toLowerCase() / var.lastIndexOf('a') / var.indexOf('a')
 var.slice(0,4) => cuts via indexs / slice(4) => stars form 4th index.
@@ -15,13 +23,6 @@ var.charAt() => only takes first character from str.
 var.trim() => it removes white spaces from str.
 var.split('a') => it creates an array it takes as a target "a" letter and removes it.
 
-- numbers
-in js all numbers are number. there no differens beetween 1 or 3.5. they all are same.
- math operators +,-,*,/, **, %
--explain updating data with a method of likes. (like there was 10 likes and smbd liked and its now 11 likes)
-NaN => 5 / 'salom'
-// math in js
-Math.round(2.8) => 3 // yaxlitlash
 
 // str tamplate str
 let a = 'samle text'
@@ -93,8 +94,21 @@ console.log(name == 'teamit') // true
 - automatic type conversions 'hello' + 3 => 'hello3'
 
 let smth  = '100'
+let smb = 313
 smth = Number(smth)
+smb = String(smb)
 console.log(smth + 1)
+
+// work shop (prompt)
+- when smb enters the name 1st letter should be big others little.
+let name = prompt('enter your name ')
+let stLetter = name.charAt().toUpperCase()
+let theRest = name.slice(1).toLowerCase()
+let result = stLetter + theRest
+alert(`salom ${result}`)
+
+
+
 
 
 
