@@ -107,12 +107,63 @@ let theRest = name.slice(1).toLowerCase()
 let result = stLetter + theRest
 alert(`salom ${result}`)
 
+// for loop
+
+for(let i = 0; i < 10; i++){
+    console.log('name')
+}
+
+(if we delete i++, it means infinite loop)
+
+-_-_-_-_-_-_-_-
+
+const fruits = ['banana', 'kivi', 'apple']
+
+for (let i=0; i < fruits.length; i++){
+    console.log(fruits[i].toUpperCase())
+    console.log(`men sevimli meyvam ${fruits[i]}`);
+}
+
+// while loop
+let i = 0
+while (i < fruits.length;){
+    console.log(fruits[i].toUpperCase())
+    i++
+}
+(if we delete i++, it means infinite loop)
+
+// do while
+
+let i = 0
+
+do {
+    console.log(i)
+    i++
+}while(i < 5)
+
+(do while 1st logs data then checks but while it seft 1st checks)
 
 
+// if statements
 
+const age = 20
+if (age > 20){
+    console.log('siz 20 dan kattasiz')
+}
+-_-_-_-_-_-_-_-
 
+const mehmonlar = ['aziz','farrux','jafar', 'alovuddin']
+if (mehmonlar.length > 4) {
+    console.log('yetarlicha mehmonlar kelishibdi')
+}else{
+    console.log('demak holi kam')
+}
+-_-_-_-_-_-_-_-
+let password = 'parol123'
 
-
+if (password.length >= 8){
+    console.log('parol yetarlicha uzun')
+}
 
 
 
@@ -170,4 +221,102 @@ localStorage - only supports string.
 localStorage.setItem("message", "hello"); => entering data into localStorage. $$ intead of message you can shoose any word.
 localStorage.getItem("message") => console.log(localStorage.getItem); getting data out of localStorage.
 localStorage.removeItem("message") .
-// 5:08
+
+
+<!-- cladue code  -->
+
+// 1. Processing API responses - cleaning and normalizing data
+const users = apiResponse.map(user => ({
+    ...user,
+    name: user.name.trim().toLowerCase(),
+    email: user.email?.toLowerCase() ?? '',
+    tags: user.tags?.split(',').map(tag => tag.trim()) || []
+}));
+
+// 2. URL path handling - very common in routing
+const isValidRoute = path.startsWith('/api/v1/') &&
+                    !path.includes('..');  // security check
+
+// 3. Building query strings - used this countless times
+const queryString = Object.entries(params)
+    .filter(([_, value]) => value != null)
+    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+    .join('&');
+
+// 4. Data grouping - think analytics or reporting
+const ordersByStatus = orders.reduce((acc, order) => {
+    const status = order.status.toLowerCase();
+    acc[status] = acc[status] || [];
+    acc[status].push(order);
+    return acc;
+}, {});
+
+// 5. Smart search function - used in autocomplete
+const search = (items, query) => {
+    const searchTerm = query.toLowerCase().trim();
+    return items.filter(item =>
+        item.name.toLowerCase().includes(searchTerm) ||
+        item.tags.some(tag => tag.toLowerCase().includes(searchTerm))
+    );
+};
+
+// 6. Processing CSV data - very common in data import features
+const parseCSV = (csv) => {
+    return csv.split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+        .map(line => line.split(',')
+            .map(cell => cell.trim())
+        );
+};
+
+// 7. Unique array with modern syntax - used in tag systems
+const uniqueTags = [...new Set(
+    items.flatMap(item => item.tags)
+        .map(tag => tag.toLowerCase().trim())
+)];
+
+// 8. Last N items in a list - like recent activities
+const getRecentItems = (items, n = 5) => {
+    return items.slice(-n).reverse();
+};
+
+// 9. Pagination helper - used in literally every list view
+const paginateItems = (items, page = 1, perPage = 10) => {
+    return items.slice((page - 1) * perPage, page * perPage);
+};
+
+<!--  -->
+
+<!-- 2nd part -->
+function formatComments(comments) {
+    return comments
+        // First, clean up the data
+        .map(comment => ({
+            ...comment,
+            text: comment.text.trim(),
+            author: comment.author.toLowerCase(),
+            timestamp: new Date(comment.timestamp)
+        }))
+        // Filter out empty or deleted comments
+        .filter(comment =>
+            comment.text.length > 0 &&
+            !comment.isDeleted
+        )
+        // Group by date (using reduce)
+        .reduce((acc, comment) => {
+            const date = comment.timestamp.toDateString();
+            if (!acc[date]) {
+                acc[date] = [];
+            }
+            acc[date].push(comment);
+            return acc;
+        }, {})
+        // Sort comments within each day
+        .map(dayComments =>
+            dayComments.sort((a, b) =>
+                b.timestamp - a.timestamp
+            )
+        );
+}
+<!--  -->
