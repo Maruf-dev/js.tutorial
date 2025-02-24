@@ -6,9 +6,8 @@
 - str => '...' or "..."
 <!-- ahror web -->
 - numbers
-in js all numbers are number. there no differens beetween 1 or 3.5. they all are same.
- math operators +,-,*,/, **, %
--explain updating data with a method of likes. (like there was 10 likes and smbd liked and its now 11 likes)
+in js all numbers are number. there no differens beetween 1 or 3.5. they all are same. math operators +,-,*,/, **, %
+- explain updating data with a method of likes. (like there was 10 likes and smbd liked and its now 11 likes)
 NaN => 5 / 'salom'
 // math in js
 Math.round(2.8) => 3 // yaxlitlash
@@ -17,12 +16,21 @@ Math.round(2.8) => 3 // yaxlitlash
 - most used str methods
 ''.toUpperCase() / .toLowerCase() / var.lastIndexOf('a') / var.indexOf('a')
 var.slice(0,4) => cuts via indexs / slice(4) => stars form 4th index.
+console.log("JavaScript".substring(0, 4)); // "Java"
 var.substr(4,10) => 4 dan kn yana 10 ta index qo'shib hisoblaydi.
 var.replace('a', 'd') => 1-a ni o'zgartiradi.
+console.log("aaa".replaceAll("a", "b")); // "bbb"
 var.charAt() => only takes first character from str.
 var.trim() => it removes white spaces from str.
 var.split('a') => it creates an array it takes as a target "a" letter and removes it.
-
+==
+console.log("Hello World".includes("World")); // true
+console.log("JavaScript".startsWith("Java")); // true
+console.log("JavaScript".endsWith("Script")); // true
+==
+padStart() / padEnd() – Add padding to a string
+console.log("5".padStart(3, "0")); // "005"
+console.log("JS".padEnd(6, "*")); // "JS****"
 
 // str tamplate str
 let a = 'samle text'
@@ -124,6 +132,32 @@ for (let i=0; i < fruits.length; i++){
     console.log(`men sevimli meyvam ${fruits[i]}`);
 }
 
+-_-_-_-_-_-_-_-
+
+let a = prompt("Enter a number");
+console.log(typeof a);
+let sum = 0;
+for (let i = 0; i < a.length; i++) {
+    let b = parseInt(a[i]);
+    sum+=b;
+
+}
+console.log(sum);
+-_-_-_-_-_-_-_-
+
+let num = document.getElementById("sum");
+let a = prompt("Enter a number");
+console.log(typeof a);
+let sum = 0;
+for (let i = 0; i < a.length; i++) {
+    let b = parseInt(a[i]);
+    sum+=b;
+
+}
+
+console.log(sum);
+num.textContent = sum;
+-_-_-_-_-_-_-_-
 // while loop
 let i = 0
 while (i < fruits.length;){
@@ -159,14 +193,32 @@ if (mehmonlar.length > 4) {
     console.log('demak holi kam')
 }
 -_-_-_-_-_-_-_-
+
 let password = 'parol123'
 
-if (password.length >= 8){
+if (password.length >= 12){
     console.log('parol yetarlicha uzun')
+}else if ( >= 8){
+    console.log('sizning paralongiz yetarlicha kuchli')
+}else{
+    console.log('sizning paralongiz yetarlicha kuchli emas!')
 }
 
+-_-_-_-_-_-_-_-
 
+// logic operators - OR || and AND &&
 
+const parol = 'password@123'
+
+if (parol.length >= 12 && parol.includes('@')){
+    console.log('sizning parolingiz juda uzun!')
+}else if (parol.length >= 8 || (parol.includes('@') && parol.length >= 5)){
+    console.log('sizning parolingiz yetarlicha kuchli)
+}else{
+    console.log('sizning paralongiz kuchli emas')
+}
+
+-_-_-_-_-_-_-_-
 
 
 
