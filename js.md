@@ -1,3 +1,5 @@
+// google dev tool ni ishlataykon payt (console) paste qilishga ruxsat bermasa console'ga 'allow pasting' deb yozish kk
+
 <!-- lesson plan -->
 - alert() | confirm()
 - document.body.innerHTML = 'hello'
@@ -220,16 +222,72 @@ if (parol.length >= 12 && parol.includes('@')){
 
 -_-_-_-_-_-_-_-
 
+// break and continue
+-break stops the loop. and continue skips the part of the interation.
+-_-_-_-_-_-_-_-
+
+let counter = [30, 43, 0, 65, 100, 20, 11]
+
+for (let i = 0; i< counter.length; i++;){
+    if (conter[i] === 0){
+        continue
+    }
+    console.log('your count is:' counter[i])
+
+    if(natijalar[i] === 100){
+        console.log('Siz eng yuqori natijani topladingiz')
+        break
+    }
+}
+-_-_-_-_-_-_-_-
+
+for (let i = 1; i <= 5; i++) {
+  if (i % 2 === 0) {
+    continue; // Skip even numbers
+  }
+  console.log(i);
+}
+
+-_-_-_-_-_-_-_-
+
+const transactions = [
+  { id: 1, amount: 100, status: 'completed' },
+  { id: 2, amount: 50, status: 'pending' },
+  { id: 3, amount: 200, status: 'completed' },
+  { id: 4, amount: 75, status: 'failed' }
+];
+
+let totalCompletedAmount = 0;
+
+for (const transaction of transactions) {
+  // Skip any non-completed transactions
+  if (transaction.status !== 'completed') {
+    continue;
+  }
+
+  // This code only runs for completed transactions
+  totalCompletedAmount += transaction.amount;
+}
+
+console.log(totalCompletedAmount); // 300
+
+-_-_-_-_-_-_-_-
+
+// swich case
+
+const grade = "A"
+swich (grade){
+    case "A":
+        console.log('good')
+    case "B":
+        console.log('normal')
+    case "C":
+        console.log('bad')
+    default:
+        console.log('occured error')
+}
 
 
-
-
-
-
-
-=====
-// google dev tool ni ishlataykon payt (console) paste qilishga ruxsat bermasa console'ga 'allow pasting' deb yozish kk
-====
 // we can see undefined when our variable is empty (let car;)
 // in const variables you cant skip empty variable. (const car = undefined;)
 
@@ -259,14 +317,14 @@ console.log(['name']) // this is bracket notation.
  the addvantage of bracket notation, it can call any object keys that dont work in dot notation.
 
 //
-
+-_-_-_-_-_-_-_-
 JSON => javascript object notation
 its similar with js object but it doesnt support single quote ('') and functions.
 
 JSON.stringify(parametr) => console.log(JSON.stringify(parametr)) makes object to str
 
 JSON.pasre(parametr) => console.log(JSON.pasre(parametr)) makes str to object
-====
+-_-_-_-_-_-_-_-
 
 localStorage - only supports string.
 
