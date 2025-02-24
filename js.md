@@ -84,6 +84,9 @@ result = mehmonlar.concat(numbers)
 // Null and Undefined
 - Undefined - a variable without any value.
 - null - in math it could be 0 (numeber) / in forms it means its free (empty).
+// we can see undefined when our variable is empty (let car;)
+// in const variables you cant skip empty variable. (const car = undefined;)
+-_-_-_-_-_-_-_-
 
 // Boolean && Comparisons
 - true && false
@@ -209,6 +212,8 @@ if (password.length >= 12){
 -_-_-_-_-_-_-_-
 
 // logic operators - OR || and AND &&
+// guard operator => &&
+// ( ||  or it could be said like default operator)
 
 const parol = 'password@123'
 
@@ -287,15 +292,11 @@ swich (grade){
         console.log('occured error')
 }
 
+-_-_-_-_-_-_-_-
 
-// we can see undefined when our variable is empty (let car;)
-// in const variables you cant skip empty variable. (const car = undefined;)
-
-// guard operator => &&
 
 // scopes help us to avoid naming errors.
 
-// ( ||  or it could be said like default operator)
 
 // it will be better if choose verbs in func names. like ( pickComputerMove() )
 
