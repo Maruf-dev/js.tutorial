@@ -293,6 +293,20 @@ swich (grade){
 }
 
 -_-_-_-_-_-_-_-
+// block scope
+
+let age = 24
+
+if(true){
+    let age = 25
+    let name = 'maroof'
+    console.log('block scope data: ',age,name)
+}
+console.log('glabal scope data:',age,name)
+
+_qachonki glabal scopeda data bop blockda bolmasa global hamma joyda ishlatiladi.Agar localda ham globalda ham data bo'lsa local tashqariga chiqmaydi.Agar data faqar localda bolsa error beradi, localdan elon qilingan globalga chiqmaydi.
+
+
 
 
 // scopes help us to avoid naming errors.
