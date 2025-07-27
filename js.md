@@ -58,7 +58,7 @@ template string'ni + tarafi interpolation'ga yaxshi.
 this ` output: 'like\nthis'
 ====
 
-//array
+//ARRAY
 
 //before explaining array and objects. there was explanation about what premetive/referance (more complex).
 let mehmonlar = ['sarvar','aziz', 'komil']
@@ -72,7 +72,7 @@ let numbers = [1,2,4,5,6,7,9]
 let result = numbers.length
 console.log(result)
 
-// methods
+// METHODS
 - push() => adds new character to the end of the array.
 mehmonlar.push('davlatbek');
 - pop() => removes 1 character from the end of the array.
@@ -120,7 +120,7 @@ let theRest = name.slice(1).toLowerCase()
 let result = stLetter + theRest
 alert(`salom ${result}`)
 
-// for loop
+// FOR LOOP
 
 for(let i = 0; i < 10; i++){
     console.log('name')
@@ -163,7 +163,7 @@ for (let i = 0; i < a.length; i++) {
 console.log(sum);
 num.textContent = sum;
 -_-_-_-_-_-_-_-
-// while loop
+// WHILE LOOP
 let i = 0
 while (i < fruits.length;){
     console.log(fruits[i].toUpperCase())
@@ -171,7 +171,7 @@ while (i < fruits.length;){
 }
 (if we delete i++, it means infinite loop)
 
-// do while
+// DO WHILE
 
 let i = 0
 
@@ -183,7 +183,7 @@ do {
 (do while 1st logs data then checks but while it seft 1st checks)
 
 
-// if statements
+// IF / ELSE
 
 const age = 20
 if (age > 20){
@@ -227,7 +227,8 @@ if (parol.length >= 12 && parol.includes('@')){
 
 -_-_-_-_-_-_-_-
 
-// break and continue
+BREAKE AND CONTINUE
+
 -break stops the loop. and continue skips the part of the interation.
 -_-_-_-_-_-_-_-
 
@@ -278,7 +279,7 @@ console.log(totalCompletedAmount); // 300
 
 -_-_-_-_-_-_-_-
 
-// swich case
+// SWICH CASE
 
 const grade = "A"
 swich (grade){
@@ -293,7 +294,7 @@ swich (grade){
 }
 
 -_-_-_-_-_-_-_-
-// block scope
+// BLOCK SCOPE
 
 let age = 24
 
@@ -308,7 +309,6 @@ _qachonki glabal scopeda data bop blockda bolmasa global hamma joyda ishlatiladi
 
 
 
-
 // scopes help us to avoid naming errors.
 
 
@@ -316,6 +316,116 @@ _qachonki glabal scopeda data bop blockda bolmasa global hamma joyda ishlatiladi
 
 // return code should be the last code, because after it func doesnt get any codes. It will end the function.
 
+-_-_-_-_-_-_-_-
+FUNCTION
+
+1) function decloration
+
+function sayHello(){
+    console.log('hello')
+}
+sayHello()
+
+2) function expression
+
+const sayBye = function(){
+    console.log('hello')
+}
+
+sayBye()
+
+3) arrow function
+
+const sayGood = () => {
+    console.log('its arrow function')
+}
+
+sayGood()
+
+// argument parametr
+-Agar parametr berilib argument berilmasa undefined chiaqadi shu uchun default value berilishi kk. (Bu holda ='kech' default qiymat)
+
+cosnt sayHello = function(name, day ='kech'){   // parametr
+    console.log(`Hello ${name} ${day}`)
+}
+
+sayHello('Jonbek', 'tong')  // argument
+-_-_-_-_-_-_-_-
+USING RETURN IN FUNCTIONS
+
+const calcArea = function(radius){
+    return 3.14 * radius ** 2   // in js we use return when we want to get data outside the function
+}
+
+const a = calcArea(5)
+-_-_-_-_-_-_-_-
+
+ARROW FUNCTION
+
+1)const calcArea = radius => 3.14 * radius ** 2
+
+const area = calcArea(5)
+console.log(area)
+
+2)const greet = (ism, familiya) => {
+    return `Hello ${ism} ${familiya}`
+}
+
+const result = greet ('Danil', 'Sultanov')
+console.log(result)
+
+3) const bill = (products, tax ) => {
+    let total = 0
+    for (let i=0; i < product.length; i++ ){
+        total += products[i] + products[i] + tax
+    }
+    return total
+}
+
+const result = bill ([10, 13, 45], 0.2)
+consoole.log(result)
+
+-_-_-_-_-_-_-_-
+
+FUNCTIONS VS METHODS
+
+-function'lar yolg'iz kelishi mmkn. ammon method'lar qaysidr data type ga bog'lanib keladi.
+
+-_-_-_-_-_-_-_-
+
+CALLBACK FUNCTION
+
+-Function'ning argumentiga berilgan functionga CALLBACK function deyiladi.
+
+const myFunc=(callbackFunc)=>{
+    let number = 50
+    callbackFunc(number)
+}
+
+myFunc(function(value){
+    console.log(value)
+})
+
+or
+
+myFunc((value)=>{
+    console.log(value)
+})
+
+-_-_-_-_-_-_-_-
+FOR EACH METHOD
+
+-this method used for arrays.
+
+const ismlar= ['ahror','sardor','doniyor','bekzod']
+const newIsmlar = []
+
+ismlar.forEach(function(ism,index){
+    const newIsm = ism.charAt().toUpperCase() + ism.slice(1).toLowerCase() + 'bek'
+    newIsmlar.push(newIsm)
+})
+console.log(newIsmlar)
+-by default there is INDEX parametr in foreach but its skiped offen. (mostly we dont use it)
 
 
 // in js there are many ways to acceess to objects one of them "dot notation".
@@ -323,16 +433,154 @@ _qachonki glabal scopeda data bop blockda bolmasa global hamma joyda ishlatiladi
 const product {
     name: 'apple'
 }
+-_-_-_-_-_-_-_-
 
-console.log(product.name) // this is dot notation.
+OBJECTS
+
+const user = {
+    name: 'maroof',
+    age: 24,
+    isCar: False,
+    languages:["russian","uzbek","english"],
+    location: "Bukhara"
+}
+
+console.log(user)
+console.log(user.age)
+
+user.age = 25
+console.log(user.age)
+
+console.log(user.name) // this is dot notation.
 
  And 2nd one is bracket notation ['onbeckt-key'].
 
-console.log(['name']) // this is bracket notation.
+console.log(user['name']) // this is bracket notation.
  the addvantage of bracket notation, it can call any object keys that dont work in dot notation.
-
-//
 -_-_-_-_-_-_-_-
+ADDING METHODS IN OBJ
+
+const user = {
+    name: 'maroof',
+    age: 24,
+    isCar: False,
+    languages:["russian","uzbek","english"],
+    location: "Bukhara"
+    login: function(){
+        console.log('you logged in')
+    }
+}
+
+user.login() // calling obj method
+-_-_-_-_-_-_-_-
+
+const user = {
+    name: 'maroof',
+    age: 24,
+    isCar: false,
+    languages:["russian","uzbek","english"],
+    location: "Bukhara",
+    login: function(){
+        console.log('you logged in')
+    },
+    speak:function(){
+        console.log("I can speak:")
+        this.languages.forEach((lang) =>{
+            console.log(lang)
+        })
+    },
+    movies:[
+    {name: "Avatar", likes: 456},
+    {name: "Harry Potter", likes: 567},
+    {name: "Titanic", likes: 156},
+    {name: "Sherkoc holmes", likes: 432}],
+
+    //inside the obj we dont use arrow function if we use it returns global window Object
+    // speak: ()=>{
+    //     console.log(this)
+    // },
+    watchMovie: function(){
+        this.movies.forEach((movie) => {
+            console.log(`Name: ${movie.name}, Likes: ${movie.likes}`)
+        })
+    }
+
+}
+
+user.watchMovie()
+
+-_-_-_-_-_-_-_-
+
+THIS
+
+-if call THIS in global it returns WINDOW object (there all window methods like alert/confirm/prompt/console.log)
+
+console.log(this)
+
+-_-_-_-_-_-_-_-
+
+OBJECTS IN ARRAY
+
+const movies = [
+    {name: "Avatar", likes: 456},
+    {name: "Harry Potter, likes: 567"},
+    {name: "Titanic", likes: 156},
+    {name: "Sherkoc holmes, likes: 432"}
+
+]
+
+movies.forEach((movie)=>{
+    const result = `Kino nomi ${movie.name} like'lar soni ${movie.likes}`
+    console.log(result)
+})
+-_-_-_-_-_-_-_-
+
+MATH OBJECT
+
+console.log(Math)
+console.log(Math.E)
+console.log(Math.PI)
+
+const area1 = 7.9
+console.log(Math.round(area1)) // 8
+
+const area2 = 7.1
+console.log(Math.round(area2)) //7
+//sonning eng yaqin butun qismiga yaxlitlash
+
+|||
+
+console.log(Math.floor(area2)) // 7
+-Math.floor means round  down
+
+|||
+
+console.log(Math.ceil(area2)) // 8
+-Math.ceil means round up
+
+|||
+
+console.log(Math.trunc(area2)) // 7
+- Math.trunc faqat butun qismini op qoladi. (7.3 => 7 / 8.4 => 8)
+
+|||
+
+Math.random() - 0 va 1 oralig'ida ixtiyoriy raqamlarni qaytaradi
+
+const randomNumber = Math.trunc(Math.random() * 10) + 1
+console.log(randomNumber)
+
+-_-_-_-_-_-_-_-
+
+DOM - document object model - it means all codes which is wrapped in one object.
+
+!!! if I call 'document' in console, I can see whale html code of website.
+
+
+
+
+
+
 JSON => javascript object notation
 its similar with js object but it doesnt support single quote ('') and functions.
 
@@ -346,102 +594,3 @@ localStorage - only supports string.
 localStorage.setItem("message", "hello"); => entering data into localStorage. $$ intead of message you can shoose any word.
 localStorage.getItem("message") => console.log(localStorage.getItem); getting data out of localStorage.
 localStorage.removeItem("message") .
-
-
-<!-- cladue code  -->
-
-// 1. Processing API responses - cleaning and normalizing data
-const users = apiResponse.map(user => ({
-    ...user,
-    name: user.name.trim().toLowerCase(),
-    email: user.email?.toLowerCase() ?? '',
-    tags: user.tags?.split(',').map(tag => tag.trim()) || []
-}));
-
-// 2. URL path handling - very common in routing
-const isValidRoute = path.startsWith('/api/v1/') &&
-                    !path.includes('..');  // security check
-
-// 3. Building query strings - used this countless times
-const queryString = Object.entries(params)
-    .filter(([_, value]) => value != null)
-    .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
-    .join('&');
-
-// 4. Data grouping - think analytics or reporting
-const ordersByStatus = orders.reduce((acc, order) => {
-    const status = order.status.toLowerCase();
-    acc[status] = acc[status] || [];
-    acc[status].push(order);
-    return acc;
-}, {});
-
-// 5. Smart search function - used in autocomplete
-const search = (items, query) => {
-    const searchTerm = query.toLowerCase().trim();
-    return items.filter(item =>
-        item.name.toLowerCase().includes(searchTerm) ||
-        item.tags.some(tag => tag.toLowerCase().includes(searchTerm))
-    );
-};
-
-// 6. Processing CSV data - very common in data import features
-const parseCSV = (csv) => {
-    return csv.split('\n')
-        .map(line => line.trim())
-        .filter(line => line.length > 0)
-        .map(line => line.split(',')
-            .map(cell => cell.trim())
-        );
-};
-
-// 7. Unique array with modern syntax - used in tag systems
-const uniqueTags = [...new Set(
-    items.flatMap(item => item.tags)
-        .map(tag => tag.toLowerCase().trim())
-)];
-
-// 8. Last N items in a list - like recent activities
-const getRecentItems = (items, n = 5) => {
-    return items.slice(-n).reverse();
-};
-
-// 9. Pagination helper - used in literally every list view
-const paginateItems = (items, page = 1, perPage = 10) => {
-    return items.slice((page - 1) * perPage, page * perPage);
-};
-
-<!--  -->
-
-<!-- 2nd part -->
-function formatComments(comments) {
-    return comments
-        // First, clean up the data
-        .map(comment => ({
-            ...comment,
-            text: comment.text.trim(),
-            author: comment.author.toLowerCase(),
-            timestamp: new Date(comment.timestamp)
-        }))
-        // Filter out empty or deleted comments
-        .filter(comment =>
-            comment.text.length > 0 &&
-            !comment.isDeleted
-        )
-        // Group by date (using reduce)
-        .reduce((acc, comment) => {
-            const date = comment.timestamp.toDateString();
-            if (!acc[date]) {
-                acc[date] = [];
-            }
-            acc[date].push(comment);
-            return acc;
-        }, {})
-        // Sort comments within each day
-        .map(dayComments =>
-            dayComments.sort((a, b) =>
-                b.timestamp - a.timestamp
-            )
-        );
-}
-<!--  -->
