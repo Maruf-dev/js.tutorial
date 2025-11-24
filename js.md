@@ -425,23 +425,22 @@ ismlar.forEach(function(ism,index){
     newIsmlar.push(newIsm)
 })
 console.log(newIsmlar)
--by default there is INDEX parametr in foreach but its skiped offen. (mostly we dont use it)
+// By default, the forEach method provides an index parameter, but it's often skipped because we usually don't need it.
 
+// in js there are many ways to access to objects one of them "dot notation".
+// In JavaScript, you can access object properties in two main ways: dot notation and bracket notation.
 
-// in js there are many ways to acceess to objects one of them "dot notation".
-
-const product {
+const product = {
     name: 'apple'
 }
--_-_-_-_-_-_-_-
 
 OBJECTS
 
 const user = {
     name: 'maroof',
     age: 24,
-    isCar: False,
-    languages:["russian","uzbek","english"],
+    isCar: false,
+    languages: ["russian", "uzbek", "english"],
     location: "Bukhara"
 }
 
@@ -453,87 +452,46 @@ console.log(user.age)
 
 console.log(user.name) // this is dot notation.
 
- And 2nd one is bracket notation ['onbeckt-key'].
-
+// And 2nd one is bracket notation ['object-key'].
 console.log(user['name']) // this is bracket notation.
- the addvantage of bracket notation, it can call any object keys that dont work in dot notation.
--_-_-_-_-_-_-_-
+// The advantage of bracket notation is that it can access keys that dot notation can't (like keys with spaces or special characters).
+
 ADDING METHODS IN OBJ
 
 const user = {
     name: 'maroof',
     age: 24,
-    isCar: False,
-    languages:["russian","uzbek","english"],
-    location: "Bukhara"
+    isCar: false,
+    languages: ["russian", "uzbek", "english"],
+    location: "Bukhara",
     login: function(){
         console.log('you logged in')
     }
 }
 
 user.login() // calling obj method
--_-_-_-_-_-_-_-
 
-const user = {
-    name: 'maroof',
-    age: 24,
-    isCar: false,
-    languages:["russian","uzbek","english"],
-    location: "Bukhara",
-    login: function(){
-        console.log('you logged in')
-    },
-    speak:function(){
-        console.log("I can speak:")
-        this.languages.forEach((lang) =>{
-            console.log(lang)
-        })
-    },
-    movies:[
-    {name: "Avatar", likes: 456},
-    {name: "Harry Potter", likes: 567},
-    {name: "Titanic", likes: 156},
-    {name: "Sherkoc holmes", likes: 432}],
-
-    //inside the obj we dont use arrow function if we use it returns global window Object
-    // speak: ()=>{
-    //     console.log(this)
-    // },
-    watchMovie: function(){
-        this.movies.forEach((movie) => {
-            console.log(`Name: ${movie.name}, Likes: ${movie.likes}`)
-        })
-    }
-
-}
-
-user.watchMovie()
-
--_-_-_-_-_-_-_-
+// When defining methods inside objects, avoid using arrow functions if you need to use 'this'. Arrow functions do not have their own 'this' binding.
 
 THIS
 
--if call THIS in global it returns WINDOW object (there all window methods like alert/confirm/prompt/console.log)
+// In the global scope, 'this' refers to the window object (in browsers).
 
 console.log(this)
-
--_-_-_-_-_-_-_-
 
 OBJECTS IN ARRAY
 
 const movies = [
     {name: "Avatar", likes: 456},
-    {name: "Harry Potter, likes: 567"},
+    {name: "Harry Potter", likes: 567},
     {name: "Titanic", likes: 156},
-    {name: "Sherkoc holmes, likes: 432"}
-
+    {name: "Sherkoc holmes", likes: 432}
 ]
 
 movies.forEach((movie)=>{
     const result = `Kino nomi ${movie.name} like'lar soni ${movie.likes}`
     console.log(result)
 })
--_-_-_-_-_-_-_-
 
 MATH OBJECT
 
@@ -570,27 +528,145 @@ Math.random() - 0 va 1 oralig'ida ixtiyoriy raqamlarni qaytaradi
 const randomNumber = Math.trunc(Math.random() * 10) + 1
 console.log(randomNumber)
 
--_-_-_-_-_-_-_-
-
 DOM - document object model - it means all codes which is wrapped in one object.
 
 !!! if I call 'document' in console, I can see whale html code of website.
 
+|||
+
+// --- Music Player ---
+const tracks = [
+  { id: 1, title: "Song A", url: "https://musicfun.it-incubator.app/api/samurai-way-soundtrack.mp3" },
+  { id: 2, title: "Song B", url: "https://musicfun.it-incubator.app/api/samurai-way-soundtrack-instrumental.mp3" },
+];
+
+const rootEl = document.getElementById('root');
+
+// Music Player Header
+const musicHeaderEl = document.createElement('h1');
+musicHeaderEl.textContent = 'My Music Player';
+rootEl.appendChild(musicHeaderEl);
+
+// Music List
+const musicListEl = document.createElement('ul');
+tracks.forEach(track => {
+  const itemEl = document.createElement('li');
+  itemEl.textContent = track.title;
+
+  const audioEl = document.createElement('audio');
+  audioEl.controls = true;
+  audioEl.src = track.url;
+  itemEl.appendChild(audioEl);
+
+  musicListEl.appendChild(itemEl);
+});
+rootEl.appendChild(musicListEl);
+
+// --- To-Do List ---
+const tasks = [
+  { title: "Купить продукты на неделю", isDone: false },
+  { title: "Полить цветы", isDone: true },
+  { title: "Сходить на тренировку", isDone: false },
+];
+
+// To-Do List Header
+const todoHeaderEl = document.createElement('h1');
+todoHeaderEl.textContent = "Список дел";
+rootEl.appendChild(todoHeaderEl);
+
+// To-Do List
+const todoListEl = document.createElement('ul');
+tasks.forEach(task => {
+  const itemEl = document.createElement('li');
+  itemEl.textContent = task.title;
+
+  const coverInputEl = document.createElement('input');
+  coverInputEl.type = 'checkbox';
+  coverInputEl.checked = task.isDone;
+  itemEl.prepend(coverInputEl);
+
+  todoListEl.appendChild(itemEl);
+});
+rootEl.appendChild(todoListEl);
+
+// --- IGNORE ---
+// In your HTML file, ensure you have a div with id 'root':
+// <div id="root"></div>
+// --- IGNORE ---
+
+
+|||
+// --- Map ---
+const numbers = [1, 2, 3, 4, 5];
+const newArray = numbers.map((number) => {
+  return number * 2;
+});
+
+console.log(newArray);
+// Output: [2, 4, 6, 8, 10]
+
+// The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+const numbers = [1, 2, 3, 4, 5];
+const newArray = numbers.map((number) => {
+  return { value: number * 2 };
+});
+
+console.log(newArray);
+// Output: [ { value: 2 }, { value: 4 }, { value: 6 }, { value: 8 }, { value: 10 } ]
+// Here, each element in the new array is an object with a value property.
+
+
+const words = ['spray', 'limit', 'elite', 'exuberant'];
+const wordsInfo = words.map((word) => {
+  return { word: word, length: word.length };
+
+});
+
+console.log(wordsInfo);
+// Output: [ { word: 'spray', length: 5 },
+//           { word: 'limit', length: 5 },
+//           { word: 'elite', length: 5 },
+//           { word: 'exuberant', length: 9 } ]
+
+// Here, each element in the new array is an object containing the original word and its length.
+
+const words = ['spray', 'limit', 'elite', 'exuberant'];
+const wordsInfo = words.map((word, index, array) => {
+  return {id:index+1, word: word, length: word.length };
+});
+
+console.log(wordsInfo);
+// Output:
+// [
+//   { id: 1, word: 'spray', length: 5 },
+//   { id: 2, word: 'limit', length: 5 },
+//   { id: 3, word: 'elite', length: 5 },
+//   { id: 4, word: 'exuberant', length: 9 }
+// ]
+// Here, each element in the new array is an object containing an id (based on the index), the original word, and its length.
 
 
 
 
 
+
+
+
+
+
+|||
 JSON => javascript object notation
 its similar with js object but it doesnt support single quote ('') and functions.
 
-JSON.stringify(parametr) => console.log(JSON.stringify(parametr)) makes object to str
+// JSON (JavaScript Object Notation) is a text format for storing and exchanging data.
+// It is similar to JavaScript objects, but only supports double quotes for keys and string values, and does not support functions or comments.
 
-JSON.pasre(parametr) => console.log(JSON.pasre(parametr)) makes str to object
--_-_-_-_-_-_-_-
+JSON.stringify(parametr) // Converts a JS object to a JSON string
+JSON.parse(parametr)     // Converts a JSON string to a JS object
 
 localStorage - only supports string.
 
-localStorage.setItem("message", "hello"); => entering data into localStorage. $$ intead of message you can shoose any word.
-localStorage.getItem("message") => console.log(localStorage.getItem); getting data out of localStorage.
-localStorage.removeItem("message") .
+localStorage.setItem("message", "hello"); // Store data
+console.log(localStorage.getItem("message")); // Retrieve data
+localStorage.removeItem("message"); // Remove data
