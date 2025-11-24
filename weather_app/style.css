@@ -1,0 +1,141 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: hsl(0, 0%, 90%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.weatherForm{
+  margin: 20px;
+}
+
+.cityInput{
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  border: 2px solid hsla(0, 0%, 20%, 0.3);
+  border-radius: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+button[type="submit"]{
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: hsl(200, 70%, 50%);
+  color: white;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover{
+  background-color: hsl(200, 70%, 40%);
+}
+
+.card{
+  background: linear-gradient(180deg, hsl(210, 100%, 75%), hsl(40, 100%, 75%));
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 300px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+p{
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+.temp, .cityName{
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.humidity{
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.descDisplay{
+  font-style: italic;
+  font-weight: bold;
+  font-style: 2rem;
+  margin-bottom: 20px;
+}
+
+.weatherEmoji{
+  margin: 0;
+  font-size: 5rem;
+}
+
+.errorDisplay{
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
